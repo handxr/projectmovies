@@ -1,7 +1,20 @@
 import Image from "next/image";
 import { ThumbUpIcon } from "@heroicons/react/outline";
 
-export const Thumbnail = ({ result }: any) => {
+
+interface IResult {
+  result: any;
+  backdrop_path?: string;
+  overview?: string;
+  title?: string;
+  original_name?: string;
+  media_type?: string;
+  release_date?: string;
+  first_air_date?: string;
+  vote_count?: number;
+}
+
+export const Thumbnail = ({ result }: IResult) => {
   const BASE_URL = "https://themoviedb.org/t/p/original";
   return (
     <div className="group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">
